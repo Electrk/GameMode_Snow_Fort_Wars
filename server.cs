@@ -43,7 +43,7 @@ package GameMode_Snow_Fort_Wars
 		echo ("Creating snow brick grid...");
 
 		%before = getRealTime ();
-		BuildableSnow_InitGrid (128, 128, 6);
+		BuildableSnow_CreateGrid (128, 128, 6);
 
 		echo ("Snow brick grid created in " @ (getRealTime () - %before) @ "ms");
 	}
