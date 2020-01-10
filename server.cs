@@ -56,16 +56,14 @@ package GameMode_Snow_Fort_Wars
 		}
 	}
 
-	function BuildableSnow_CreateSnowBrick ( %x, %y, %z )
+	function fxDTSBrick::insertIntoSnowGrid ( %this, %gridX, %gridY, %gridZ )
 	{
-		%brick = Parent::BuildableSnow_CreateSnowBrick (%x, %y, %z);
-
-		if ( %z > 0 )
+		if ( %gridZ > 0 )
 		{
-			%brick.setSnowVertices (0, 0, 0, 0);
+			%this.setDataBlock ($BuildableSnow::DataBlock_[0, 0, 0, 0]);
 		}
 
-		return %brick;
+		return Parent::insertIntoSnowGrid (%this, %gridX, %gridY, %gridZ);
 	}
 
 	function serverCmdTeamMessageSent () {}
